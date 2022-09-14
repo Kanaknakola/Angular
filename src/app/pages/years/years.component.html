@@ -1,1 +1,3 @@
-<p>years works!</p>
+<div *ngFor="let year of years | async">
+    <a routerLink="['movie', movie.id]">{{year}}</a>
+</div>

@@ -13,9 +13,11 @@ import { HttpService } from '../../../services/http.service';
 export class MoviesInCategoryComponent implements OnInit {
   movies: Observable<Movie[]>;
 
-  constructor(public http: HttpService) {
-    this.movies = this.http.getMoviesFromCategory("");
+  constructor(public http: HttpService, private routes: ActivatedRoute) {
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const category = this.routes.snapshot.paramMap.get('category');
+    this.movies = this.http.getMoviesFromCategory(category);
+  }
 }

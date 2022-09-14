@@ -1,3 +1,5 @@
+import { MoviesInCategoryComponent } from './pages/categories/movies-in-category/movies-in-category.component';
+import { YearsComponent } from './pages/years/years.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MoviesComponent } from './pages/movies/movies.component';
@@ -10,7 +12,8 @@ const routes: Routes = [
   { path: 'movies', component: MoviesComponent },
   { path: 'movie/:id', component: MovieDetailsComponent},
   { path: 'categories', component: CategoriesComponent},
-  { path: '**', component: PageNotFoundComponent },
+  { path: 'category/:category', component: MoviesInCategoryComponent},
+  { path: 'years', component: YearsComponent},
 ];
 
 @NgModule({
